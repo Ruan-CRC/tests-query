@@ -4,7 +4,7 @@ try {
   const cli = new ClientePG()
   let query: string;
 
-  query = `CREATE TABLE public.postUUID4 (
+  query = `CREATE TABLE public.nana (
         id uuid NOT NULL PRIMARY KEY,
         username text NOT NULL,
         email text NOT NULL

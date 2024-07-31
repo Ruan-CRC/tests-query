@@ -7,13 +7,15 @@
   "scripts": {
     "sql": "./node_modules/.bin/dotenvx run -- tsx src/script.ts",
     "postmigrate": "npx @snaplet/seed sync",
-    "seed": "npx tsx src/seeds/seed.ts"
+    "seed": "npx tsx src/seeds/seed.ts",
+    "introspection": "npx prisma db pull"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@dotenvx/dotenvx": "^1.6.4",
+    "@prisma/client": "^5.17.0",
     "@types/node": "^20.14.10",
     "pg": "^8.12.0",
     "postgres": "^3.4.4",
@@ -25,6 +27,7 @@
     "@snaplet/copycat": "^5.0.0",
     "@snaplet/seed": "^0.97.20",
     "@types/pg": "^8.11.6",
-    "@types/uuid": "^10.0.0"
+    "@types/uuid": "^10.0.0",
+    "prisma": "^5.17.0"
   }
 }
