@@ -1,4 +1,4 @@
-# Desempenho de Consultas SQL com Prisma
+# Desempenho de Consultas SQL
 
 Olá!
 
