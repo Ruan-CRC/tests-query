@@ -2,4 +2,4 @@ node_modules
 .docker/postgres_data
 .docker/pgadmin_data
 .env
-.snaplet
+.snaplet/

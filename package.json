@@ -7,7 +7,7 @@
   "scripts": {
     "sql": "./node_modules/.bin/dotenvx run -- tsx src/script.ts",
     "postmigrate": "npx @snaplet/seed sync",
-    "seed": "npx @dotenvx/dotenvx run -- tsx seed.ts"
+    "seed": "npx tsx src/seeds/seed.ts"
   },
   "keywords": [],
   "author": "",

@@ -2,18 +2,23 @@ import ClientePG from "../clientPostgres";
 
 try {
   const cli = new ClientePG()
+  let query: string;
 
-  const query = `CREATE TABLE public.postUUID4 (
+  query = `CREATE TABLE public.postUUID4 (
         id uuid NOT NULL PRIMARY KEY,
         username text NOT NULL,
         email text NOT NULL
       );`;
 
-  const result = await cli.client.query(query)
+  // query = `CREATE TABLE public.postUUID7 (
+  //   id uuid NOT NULL PRIMARY KEY,
+  //   username text NOT NULL,
+  //   email text NOT NULL
+  // );`;
 
-  if (result) {
-    console.log('Successfully query executed!')
-  }
+  await cli.client.query(query)
+
+  console.log('Successfully query executed!')
 } catch (error) {
   console.error(error)
 }
