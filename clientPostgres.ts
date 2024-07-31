@@ -13,10 +13,18 @@ class ClientePG {
       port: Number(process.env.PORT_DB),
       database: process.env.DATABASE_DB,
     })
+
+    this.connect()
   }
 
   async connect() {
-    await this.client.connect()
+    try {
+      console.log('Connecting to database...')
+      await this.client.connect()
+      console.clear()
+    } catch (error) {
+      console.error('Error connecting to database: ', error)
+    }
   }
 
 }

@@ -4,7 +4,7 @@ import postgres from "postgres";
 
 export default defineConfig({
   adapter: () => {
-    const client = postgres('postgresql://root:root@192.168.128.3:5432/lavajato');
+    const client = postgres(`${process.env.URL_POSTGRES}`);
     return new SeedPostgres(client);
   },
 });

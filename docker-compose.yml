@@ -1,29 +1,23 @@
-version: '3.8'
 services:
   db:
-    image: postgres:latest
+    image: postgres:alpine3.20
     environment:
-      POSTGRES_DB: lavajato
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
+      POSTGRES_DB: ${DATABASE_DB}
+      POSTGRES_USER: ${USER_DB}
+      POSTGRES_PASSWORD: ${PASS_DB}
     volumes:
       - .docker/postgres_data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
-    networks:
-      - lavajato-network
+      - "${PORT_DB}:5432"
 
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin
     ports:
-      - "88:80"
+      - "${PORT_PGADMIN}:80"
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
-      - PGADMIN_DEFAULT_PASSWORD=123456789
-    networks:
-      - lavajato-network
-
-networks:
-  lavajato-network:
-    driver: bridge
+      - PGADMIN_DEFAULT_EMAIL=${EMAIL_PGADMIN}
+      - PGADMIN_DEFAULT_PASSWORD=${PASS_PGADMIN}
+    volumes:
+      - .docker/pgadmin_data:/var/lib/pgadmin
+  
